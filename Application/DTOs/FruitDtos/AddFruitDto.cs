@@ -8,6 +8,7 @@ public class AddFruitDto
     public string Description { get; set; } = string.Empty;
     public int Price { get; set; }
     public int CategoryId { get; set; }
+
     public static implicit operator Fruit(AddFruitDto dto)
     {
         return new Fruit()
@@ -15,7 +16,7 @@ public class AddFruitDto
             Name = dto.Name,
             Description = dto.Description,
             Price = dto.Price,
-            CategoryId = dto.CategoryId,
+            CategoryId = dto.CategoryId
         };
     }
 }

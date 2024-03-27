@@ -59,7 +59,7 @@ public class CategoryService : ICategoryService
         var model = await _unitofwork.Category.GetByIdAsync(dto.Id);
         if (model == null)
             throw new NotFoundException("Category topilmadi");
-        var category = _mapper.Map<Category>(model);
+        var category = _mapper.Map<Category>(dto);
         var result = await _validator.ValidateAsync(category);
         if (!result.IsValid)
             throw new FruitException("xato");

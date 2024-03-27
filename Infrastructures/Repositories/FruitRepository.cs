@@ -31,8 +31,9 @@ public class FruitRepository(AppDbContext dbContext)
         return await _dbContext.Fruit.FindAsync(id);
     }
 
-    public Task UpdateAsync(Fruit fruit)
+    public async Task UpdateAsync(Fruit fruit)
     {
-        throw new NotImplementedException();
+        _dbContext.Fruit.Update(fruit);
+        await _dbContext.SaveChangesAsync();
     }
 }

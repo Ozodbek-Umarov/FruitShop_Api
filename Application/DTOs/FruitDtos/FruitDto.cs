@@ -6,11 +6,13 @@ public class FruitDto : AddFruitDto
 {
     public int Id { get; set; }
     public static implicit operator FruitDto(Fruit fruit)
-        => new()
+    {
+        return new FruitDto()
         {
-            Id = fruit.Id,
             Name = fruit.Name,
             Description = fruit.Description,
             Price = fruit.Price,
+            CategoryId = fruit.CategoryId
         };
+    }
 }
