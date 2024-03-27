@@ -15,14 +15,10 @@ public class FruitRepository(AppDbContext dbContext)
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(int id)
+    public async Task DeleteAsync(Fruit fruit)
     {
-        var fruit = await _dbContext.Fruit.FindAsync(id);
-        if (fruit != null)
-        {
-            _dbContext.Fruit.Remove(fruit);
-            await _dbContext.SaveChangesAsync();
-        }
+        _dbContext.Fruit.Remove(fruit);
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task<List<Fruit>> GetAllAsync()

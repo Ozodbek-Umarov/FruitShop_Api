@@ -21,14 +21,10 @@ namespace Infrastructures.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Category category)
         {
-            var category = await _dbContext.Categories.FindAsync(id);
-            if (category != null)
-            {
-                _dbContext.Categories.Remove(category);
-                await _dbContext.SaveChangesAsync();
-            }
+            _dbContext.Categories.Remove(category);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<List<Category>> GetAllAsync()
