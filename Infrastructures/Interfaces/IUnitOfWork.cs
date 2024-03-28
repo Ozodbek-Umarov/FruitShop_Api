@@ -3,4 +3,5 @@ public interface IUnitOfWork
 {
     ICategoryInterface Category { get; }
     IFruitInterface Fruit { get; }
+    IUserInterface User { get; }
 }

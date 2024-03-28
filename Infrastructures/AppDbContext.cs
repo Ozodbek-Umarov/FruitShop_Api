@@ -7,4 +7,5 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 {
     public DbSet <Fruit> Fruit { get; set; }
     public DbSet <Category> Categories { get; set; }
+    public DbSet<User> Users { get; set; }
 }

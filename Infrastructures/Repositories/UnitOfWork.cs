@@ -10,4 +10,6 @@ public class UnitOfWork(AppDbContext dbContext)
     public ICategoryInterface Category => new CategoryRepository(dbContext);
 
     public IFruitInterface Fruit => new FruitRepository(dbContext);
+
+    public IUserInterface User => new UserRepository(dbContext);
 }
