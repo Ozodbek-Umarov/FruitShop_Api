@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240328112103_SecondMig")]
-    partial class SecondMig
+    [Migration("20240329050813_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace Infrastructures.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Fruit");
+                    b.ToTable("Fruits");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>

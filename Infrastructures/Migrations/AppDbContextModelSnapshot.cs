@@ -64,7 +64,7 @@ namespace Infrastructures.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Fruit");
+                    b.ToTable("Fruits");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>

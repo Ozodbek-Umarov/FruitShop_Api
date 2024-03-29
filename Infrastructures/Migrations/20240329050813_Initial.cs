@@ -5,7 +5,7 @@
 namespace Infrastructures.Migrations
 {
     /// <inheritdoc />
-    public partial class SecondMig : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -42,7 +42,7 @@ namespace Infrastructures.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Fruit",
+                name: "Fruits",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -54,9 +54,9 @@ namespace Infrastructures.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fruit", x => x.Id);
+                    table.PrimaryKey("PK_Fruits", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Fruit_Categories_CategoryId",
+                        name: "FK_Fruits_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -64,8 +64,8 @@ namespace Infrastructures.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Fruit_CategoryId",
-                table: "Fruit",
+                name: "IX_Fruits_CategoryId",
+                table: "Fruits",
                 column: "CategoryId");
         }
 
@@ -73,7 +73,7 @@ namespace Infrastructures.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Fruit");
+                name: "Fruits");
 
             migrationBuilder.DropTable(
                 name: "Users");

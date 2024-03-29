@@ -1,5 +1,6 @@
 using Application.Common;
 using Application.Common.Validators;
+using Application.Helper.Security;
 using Application.Interfaces;
 using Application.Services;
 using AutoMapper;
@@ -38,7 +39,7 @@ builder.Services.AddScoped<IValidator<Fruit>, FruitValidator>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IFruitService, FruitService>();
 
-builder.Services.AddTransient<IAuthManager, IAuthManager>();
+builder.Services.AddTransient<IAuthManager, AuthManager>();
 builder.Services.AddTransient<IAccountService, AccountService>();
 
 var app = builder.Build();

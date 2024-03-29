@@ -11,29 +11,29 @@ public class FruitRepository(AppDbContext dbContext)
 
     public async Task AddAsync(Fruit fruit)
     {
-        _dbContext.Fruit.AddAsync(fruit);
+        _dbContext.Fruits.AddAsync(fruit);
         await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(Fruit fruit)
     {
-        _dbContext.Fruit.Remove(fruit);
+        _dbContext.Fruits.Remove(fruit);
         await _dbContext.SaveChangesAsync();
     }
 
     public async Task<List<Fruit>> GetAllAsync()
     {
-        return await _dbContext.Fruit.ToListAsync();
+        return await _dbContext.Fruits.ToListAsync();
     }
 
     public async Task<Fruit> GetByIdAsync(int id)
     {
-        return await _dbContext.Fruit.FindAsync(id);
+        return await _dbContext.Fruits.FindAsync(id);
     }
 
     public async Task UpdateAsync(Fruit fruit)
     {
-        _dbContext.Fruit.Update(fruit);
+        _dbContext.Fruits.Update(fruit);
         await _dbContext.SaveChangesAsync();
     }
 }
