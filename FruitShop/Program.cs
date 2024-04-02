@@ -6,6 +6,7 @@ using Application.Services;
 using AutoMapper;
 using Domain.Entities;
 using FluentValidation;
+using FruitShop.Midlwares;
 using Infrastructures;
 using Infrastructures.Interfaces;
 using Infrastructures.Repositories;
@@ -50,6 +51,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExeptionHandleMidlware>();
 
 app.UseHttpsRedirection();
 
